@@ -1,0 +1,21 @@
+{
+  "name": "support_desk",
+  "version": "1.0.0",
+  "description": "Support desk application",
+  "main": "app.js",
+  "scripts": {
+    "server": "nodemon backend/app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shubhaseesh Kumar",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.4"
+  }
+}
