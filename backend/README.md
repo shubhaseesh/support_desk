@@ -1,7 +1,7 @@
 # Backend 
 
 # Folder structure 
-- app.js
+- index.js
 - config
     - db.js
 - controllers
@@ -19,3 +19,7 @@
     - noteRoutes.js
     - ticketRoutes.js
     - userRoutes.js
+- utils
+    - helpers.js
+    - schema.js
+    

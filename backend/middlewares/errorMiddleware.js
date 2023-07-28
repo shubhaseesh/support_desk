@@ -1,5 +1,4 @@
 const errorHandler = (err, req, res, next) => {
-
   const statusCode = err.statusCode ? err.statusCode : res.statusCode;
   res.status(statusCode);
   res.json({
