@@ -1,5 +1,6 @@
 type Props = {
   text: string;
+  type?: string;
 };
 
 const Button = (props: Props) => {

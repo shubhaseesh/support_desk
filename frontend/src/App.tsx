@@ -1,5 +1,5 @@
 import type { RouteObject } from "react-router-dom";
-import { useRoutes, useParams } from "react-router-dom";
+import { useRoutes } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Register from "./components/pages/Register";
 import Login from "./components/pages/Login";
@@ -20,7 +20,11 @@ const App = () => {
     { path: "*", element: <NotFound /> },
   ];
   let element = useRoutes(routes);
-  return <div className="h-auto w-auto">{element}</div>;
+  return (
+    <div className="h-auto w-auto">
+      {element}
+    </div>
+  );
 };
 
 export default App;

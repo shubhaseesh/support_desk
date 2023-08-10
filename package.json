@@ -1,7 +1,6 @@
 {
   "name": "support_desk",
   "version": "1.0.0",
-  "proxy": "http://localhost:5173",
   "description": "Support desk application",
   "main": "index.js",
   "scripts": {
@@ -20,6 +19,7 @@
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "concurrently": "^8.2.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
