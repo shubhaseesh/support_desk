@@ -13,7 +13,6 @@ const loginSchema = Joi.object({
 
 const ticketSchema = Joi.object({
   description: Joi.string().required(),
-  status: Joi.string().required(),
   product: Joi.string().required(),
 });
 

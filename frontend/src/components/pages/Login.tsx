@@ -1,39 +1,39 @@
-// type Props = {}
-
-// const Login = (props: Props) => {
-//   return (
-//     <div>Login</div>
-//   )
-// }
-
-// export default Login
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { login } from "../../store/features/auth/authSlice";
+import { useAppDispatch, useAppSelector } from "../../store/features/store";
+import { useNavigate } from "react-router-dom";
+import { RootState } from "../../store/features/store";
 
 const Login = () => {
-  const [formData, setFormData] = useState({
-    name: "",
+  const navigate = useNavigate();
+  const { user } = useAppSelector((state: RootState) => state.auth);
+  const [loginData, setLoginData] = useState({
     email: "",
     password: "",
-    password2: "",
   });
+
+  useEffect(() => {
+    if (user !== null) {
+      navigate("/");
+    }
+  }, [user]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
+    setLoginData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
-
+  const dispatch = useAppDispatch();
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
+    dispatch(login(loginData));
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white shadow-md rounded-lg p-8 max-w-md w-full">
+      <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
         <div className="flex justify-center">
           <h2 className="text-2xl font-semibold mb-4">Login</h2>
         </div>
@@ -43,7 +43,7 @@ const Login = () => {
             <input
               type="email"
               name="email"
-              value={formData.email}
+              value={loginData.email}
               onChange={handleChange}
               className="w-full rounded-md border px-3 py-2 text-sm focus:outline-none focus:ring focus:border-blue-300"
             />
@@ -53,7 +53,7 @@ const Login = () => {
             <input
               type="password"
               name="password"
-              value={formData.password}
+              value={loginData.password}
               onChange={handleChange}
               className="w-full rounded-md border px-3 py-2 text-sm focus:outline-none focus:ring focus:border-blue-300"
             />

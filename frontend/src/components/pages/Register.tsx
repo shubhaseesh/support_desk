@@ -31,7 +31,7 @@ const Register: React.FC = () => {
     }
     // Redirect when logged in
     if (isSuccess || user) {
-      // navigate("/");
+      navigate("/");
     }
     dispatch(reset());
   }, [user, isLoading, isSuccess, message, isError, navigate, dispatch]);
@@ -56,7 +56,7 @@ const Register: React.FC = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white shadow-md rounded-lg p-8 max-w-md w-full">
+      <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-2xl font-semibold">Register</h2>
           <p className="mb-4 font-medium">Please create an account.</p>
