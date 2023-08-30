@@ -32,7 +32,6 @@ const registerUser = asyncHandler(async (req, res, next) => {
   });
   // user creation
   if (user) {
-    console.log(35,user);
     res.status(201).json({
       _id: user._id,
       name: user.name,
